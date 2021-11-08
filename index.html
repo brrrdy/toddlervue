@@ -9,7 +9,12 @@
   <script src="https://unpkg.com/vue@next"></script>
 </head>
 <body>
-  
+  <div id="app">
+    <span>Message: {{ msg }} {{ count }}</span> <br>
+    <span v-once>This will never change: {{ msg }} {{ count }}</span> <br>
+    <p>Using mustaches: {{ rawHtml }}</p>
+    <p>Using v-html directive: <span v-html="rawHtml"></span></p>
+  </div>
   <script src="./app.js"></script>
 </body>
 </html>
