@@ -6,7 +6,10 @@ const app = Vue.createApp({
             msg: 'hello vue',
             rawHtml: '<span style="color: red">This should be red.</span>',
             dynamicId: 'vueId',
-            isButtonDisabled: true }
+            isButtonDisabled: true,
+            linkUrl: 'https://google.com',
+            doSomething: (e) => console.log(`EVENT: click, opening new tab to ${e.target.href} ${e.ctrlKey ? 'in background' : 'in foreground'}.`) 
+          }
   },
   beforeCreate() {
     console.log('count is null (beforeCreate)');

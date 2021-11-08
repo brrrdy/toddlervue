@@ -11,11 +11,20 @@
 <body>
   <div id="app">
     <span>Message: {{ msg }} {{ count }}</span> <br>
+    <span>Message: {{ msg }} {{ count + 1 }}</span> <br>
+    <span>Message: {{ msg }} {{ count }}</span> <br>
+    <span>Message: {{ msg.split('').reverse().join('') }}</span> <br>
     <span v-once>This will never change: {{ msg }} {{ count }}</span> <br>
     <p>Using mustaches: {{ rawHtml }}</p>
     <p>Using v-html directive: <span v-html="rawHtml"></span></p>
-    <div v-bind:id="dynamicId">Hello</div>
-    <button v-bind:disabled="isButtonDisabled">Button</button>
+    <div v-bind:id="dynamicId">Hello</div><br>
+    <button v-bind:disabled="isButtonDisabled">Button</button><input type="checkbox" v-model="isButtonDisabled">Disable Me</input><br>
+    <span>Button is {{ isButtonDisabled ? 'disabled' : 'enabled' }}.</span><br><br>
+    <span>Choose your search engine:</span><br>
+    <input type="radio" name="search" id="google" value="https://google.com/" v-model="linkUrl" checked><label for="google">Google</label><br>
+    <input type="radio" name="search" id="bing" value="https://bing.com/" v-model="linkUrl"><label for="bing">Bing</label><br>
+    <input type="radio" name="search" id="ddg" value="https://duckduckgo.com/" v-model="linkUrl"><label for="ddg">DuckDuckGo</label><br><br>
+    <a target="_blank" :href="linkUrl" @click="doSomething">Go to search engine</a>
   </div>
   <script src="./app.js"></script>
 </body>
