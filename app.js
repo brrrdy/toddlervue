@@ -3,8 +3,10 @@ console.log("Hello Vue");
 const app = Vue.createApp({
   data() {
     return { count: 0,
-              msg: 'hello vue',
-              rawHtml: '<span style="color: red">This should be red.</span>' }
+            msg: 'hello vue',
+            rawHtml: '<span style="color: red">This should be red.</span>',
+            dynamicId: 'vueId',
+            isButtonDisabled: true }
   },
   beforeCreate() {
     console.log('count is null (beforeCreate)');
