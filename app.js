@@ -7,7 +7,7 @@ const app = Vue.createApp({
             rawHtml: '<span style="color: red">This should be red.</span>',
             dynamicId: 'vueId',
             isButtonDisabled: true,
-            linkUrl: 'https://google.com',
+            linkUrl: null,
             doSomething: (e) => console.log(`EVENT: click, opening new tab to ${e.target.href} ${e.ctrlKey ? 'in background' : 'in foreground'}.`) 
           }
   },
@@ -29,5 +29,4 @@ const app = Vue.createApp({
 });
 const vm = app.mount('#app');
 
-//console.log(vm);
-//console.log('count is: ' + ++vm.count);
+console.log('count is: ' + ++vm.$data.count);
