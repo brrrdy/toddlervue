@@ -14,7 +14,7 @@ const app = Vue.createApp({
   // Methods
   // Avoid using arrow functions, which prevents Vue from binding the appropriate "this"
   methods: {
-    doSomething() { console.log(`EVENT: click, opening new tab to ${this.linkUrl} `) }
+    doSomething(event) { console.log(`EVENT: click, opening new tab to ${this.linkUrl} ${event.ctrlKey ? ' in background' : 'in foreground'}.`); }
   },
   // Hooks
   beforeCreate() {
