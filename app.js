@@ -8,7 +8,8 @@ const app = Vue.createApp({
             rawHtml: '<span style="color: red">This should be red.</span>',
             dynamicId: 'vueId',
             isButtonDisabled: true,
-            linkUrl: null  
+            linkUrl: null,
+            date: Date()
           }
   },
   // Methods
@@ -17,6 +18,13 @@ const app = Vue.createApp({
     doSomething(event) { console.log(`EVENT: click, opening new tab to ${this.linkUrl} ${event.ctrlKey ? ' in background' : 'in foreground'}.`); },
     increment() {
       return ++this.count;
+    },
+    toTitleDate(date) {
+      return date;
+    },
+    formatDate(date) {
+      let formattedDate = new Date(date).toDateString();
+      return formattedDate;
     }
   },
   // Hooks
