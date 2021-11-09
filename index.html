@@ -7,6 +7,7 @@
   <title>Now We're Walking</title>
   <link rel="stylesheet" href="./styles.css">
   <script src="https://unpkg.com/vue@next"></script>
+  <script src="https://unpkg.com/lodash@4.17.20/lodash.min.js"></script>
 </head>
 <body>
   <div id="app">
@@ -25,7 +26,7 @@
     <input type="radio" name="search" id="bing" value="https://bing.com/" v-model="linkUrl"><label for="bing">Bing</label><br>
     <input type="radio" name="search" id="ddg" value="https://duckduckgo.com/" v-model="linkUrl"><label for="ddg">DuckDuckGo</label><br>
     <div v-if="linkUrl"><a target="_blank" :href="linkUrl" @click="doSomething">Go to search engine: {{ linkUrl }}</a></div>
-    <div><p>Score is {{ count }}</p> <button @click="increment">Upvote &#11014;</button></div><br>
+    <div><p>Score is {{ count }}</p> <button @click="debouncedClick">Upvote &#11014; SLOWLY</button></div><br>
     <div><span :title="toTitleDate(date)">{{ formatDate(date) }}</span></div>
   </div>
   <script src="./app.js"></script>

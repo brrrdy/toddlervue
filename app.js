@@ -25,6 +25,9 @@ const app = Vue.createApp({
     formatDate(date) {
       let formattedDate = new Date(date).toDateString();
       return formattedDate;
+    },
+    click() {
+      this.increment();
     }
   },
   // Hooks
@@ -33,6 +36,8 @@ const app = Vue.createApp({
   },
   created() {
     console.log('count is: ' + this.increment() + '(created)');
+    // debounce click event with lodash
+    this.debouncedClick = _.debounce(this.click, 500);
   },
   beforeMount() {
     console.log('count is: ' + this.increment() + '(beforeMount)');
@@ -42,6 +47,8 @@ const app = Vue.createApp({
   },
   unmounted() {
     console.log('count is: ' + this.increment() + '(unmounted)');
+    // cancel debounce timer when component is removed
+    this.debouncedClick.cancel();
   }
 });
 const vm = app.mount('#app');
