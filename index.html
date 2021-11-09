@@ -10,7 +10,7 @@
   <script src="https://unpkg.com/lodash@4.17.20/lodash.min.js"></script>
 </head>
 <body>
-  <div id="app">
+  <div id="app1">
     <span>Message: {{ msg }} {{ count }}</span> <br>
     <span>Message: {{ msg }} {{ count + 1 }}</span> <br>
     <span>Message: {{ msg }} {{ count }}</span> <br>
@@ -28,6 +28,10 @@
     <div v-if="linkUrl"><a target="_blank" :href="linkUrl" @click="doSomething">Go to search engine: {{ linkUrl }}</a></div>
     <div><p>Score is {{ count }}</p> <button @click="debouncedClick">Upvote &#11014; SLOWLY</button></div><br>
     <div><span :title="toTitleDate(date)">{{ formatDate(date) }}</span></div>
+  </div>
+  <div id="app2">
+    <p>Has published books: </p>
+    <span>{{ author.name + ': ' + (author.books.length > 0 ? 'Yes' : 'No') }}</span>
   </div>
   <script src="./app.js"></script>
 </body>

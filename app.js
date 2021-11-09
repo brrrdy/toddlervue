@@ -25,9 +25,6 @@ const app = Vue.createApp({
     formatDate(date) {
       let formattedDate = new Date(date).toDateString();
       return formattedDate;
-    },
-    click() {
-      this.increment();
     }
   },
   // Hooks
@@ -37,7 +34,7 @@ const app = Vue.createApp({
   created() {
     console.log('count is: ' + this.increment() + '(created)');
     // debounce click event with lodash
-    this.debouncedClick = _.debounce(this.click, 500);
+    this.debouncedClick = _.debounce(this.increment, 500);
   },
   beforeMount() {
     console.log('count is: ' + this.increment() + '(beforeMount)');
@@ -51,6 +48,21 @@ const app = Vue.createApp({
     this.debouncedClick.cancel();
   }
 });
-const vm = app.mount('#app');
+const vm = app.mount('#app1');
 
 console.log('count is: ' + vm.increment());
+
+Vue.createApp({
+  data() {
+    return {
+      author: {
+        name: 'John Doe',
+        books: [
+          'Vue 2 - Adv Guide',
+          'Vue 3 - Basic Guide',
+          'Vue 4 - The Mystery'
+        ]
+      }
+    }
+  }
+}).mount('#app2');
