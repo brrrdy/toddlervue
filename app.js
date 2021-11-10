@@ -64,5 +64,12 @@ Vue.createApp({
         ]
       }
     }
+  },
+  computed: {
+    // a computed getter
+    publishedBooksMessage() {
+      // `this` points to the vm instance
+      return `${this.author.name}: ${this.author.books.length > 0 ? 'Yes' : 'No'}`;
+    }
   }
 }).mount('#app2');
