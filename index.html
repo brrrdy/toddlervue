@@ -10,7 +10,7 @@
   <script src="https://unpkg.com/lodash@4.17.20/lodash.min.js"></script>
 </head>
 <body>
-  <div id="app1">
+  <div id="app1" class="app">
     <span>Message: {{ msg }} {{ count }}</span> <br>
     <span>Message: {{ msg }} {{ count + 1 }}</span> <br>
     <span>Message: {{ msg }} {{ count }}</span> <br>
@@ -29,9 +29,12 @@
     <div><p>Score is {{ count }}</p> <button @click="debouncedClick">Upvote &#11014; SLOWLY</button></div><br>
     <div><span :title="toTitleDate(date)">{{ formatDate(date) }}</span></div>
   </div>
-  <div id="app2">
+  <div id="app2" class="app">
     <p>Has published books: </p>
-    <span>{{ publishedBooksMessage }}</span>
+    <span>{{ publishedBooksMessage }}</span> <br><br>
+    <button @click="updateMe">Re-render this component</button>
+    <div>Now: {{ now }}</div>
+    <div>Now now: {{ getDateNow() }}</div>
   </div>
   <script src="./app.js"></script>
 </body>

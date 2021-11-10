@@ -70,6 +70,18 @@ Vue.createApp({
     publishedBooksMessage() {
       // `this` points to the vm instance
       return `${this.author.name}: ${this.author.books.length > 0 ? 'Yes' : 'No'}`;
+    },
+    // this will never update, because Date is not a reactive dependency:
+    now() {
+      return Date();
+    }
+  },
+  methods: {
+    updateMe() {
+      this.$forceUpdate();
+    },
+    getDateNow() {
+      return Date();
     }
   }
 }).mount('#app2');
