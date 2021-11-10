@@ -62,7 +62,9 @@ Vue.createApp({
           'Vue 3 - Basic Guide',
           'Vue 4 - The Mystery'
         ]
-      }
+      },
+      firstName: 'Jane',
+      lastName: 'Doh'
     }
   },
   computed: {
@@ -74,6 +76,17 @@ Vue.createApp({
     // this will never update on re-render, because Date is not a reactive dependency
     now() {
       return Date();
+    },
+    // a computed getter and setter
+    fullName: {
+      get() {
+        return this.firstName + ' ' + this.lastName;
+      },
+      set(newName) {
+        const names = newName.split(' ');
+        this.firstName = names[0];
+        this.lastName = names[names.length - 1];
+      }
     }
   },
   methods: {

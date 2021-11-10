@@ -34,7 +34,9 @@
     <span>{{ publishedBooksMessage }}</span> <br><br>
     <button @click="updateMe">Re-render this component</button>
     <div>Now: {{ now }}</div>
-    <div>Now now: {{ getDateNow() }}</div>
+    <div>Now now: {{ getDateNow() }}</div><br>
+    <label for="fullName">Enter your name: </label><input v-model="fullName" type="text" name="fullName">
+    <div>Your name: {{ fullName }}</div>
   </div>
   <script src="./app.js"></script>
 </body>
