@@ -30,8 +30,10 @@
     <div><span :title="toTitleDate(date)">{{ formatDate(date) }}</span></div>
   </div>
   <div id="app2" class="app">
-    <p>Has published books: </p>
-    <span>{{ publishedBooksMessage }}</span> <br><br>
+    <p>
+      Has published books: <br>
+      <span>{{ publishedBooksMessage }}</span>
+    </p>
     <button @click="updateMe">Re-render this component</button>
     <div>Now: {{ now }}</div>
     <div>Now now: {{ getDateNow() }}</div><br>

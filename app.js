@@ -71,7 +71,7 @@ Vue.createApp({
     // a computed getter
     publishedBooksMessage() {
       // `this` points to the vm instance
-      return `${this.author.name}: ${this.author.books.length > 0 ? 'Yes' : 'No'}`;
+      return `${this.author.name} - ${this.author.books.length > 0 ? 'Yes' : 'No'}`;
     },
     // this will never update on re-render, because Date is not a reactive dependency
     now() {
