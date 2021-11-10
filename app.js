@@ -71,15 +71,17 @@ Vue.createApp({
       // `this` points to the vm instance
       return `${this.author.name}: ${this.author.books.length > 0 ? 'Yes' : 'No'}`;
     },
-    // this will never update, because Date is not a reactive dependency:
+    // this will never update on re-render, because Date is not a reactive dependency
     now() {
       return Date();
     }
   },
   methods: {
+    // force this component to re-render to illustrate difference between computed prop and method
     updateMe() {
       this.$forceUpdate();
     },
+    // this will always update on re-render, because it is a component instance method
     getDateNow() {
       return Date();
     }
