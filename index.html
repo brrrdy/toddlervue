@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="./styles.css">
   <script src="https://unpkg.com/vue@next"></script>
   <script src="https://unpkg.com/lodash@4.17.20/lodash.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
   <div id="app1" class="app">
@@ -38,7 +39,14 @@
     <div>Now: {{ now }}</div>
     <div>Now now: {{ getDateNow() }}</div><br>
     <label for="fullName">Enter your name: </label><input v-model="fullName" type="text" name="fullName">
-    <div>Your name: {{ fullName }}</div>
+    <div>Your name: {{ fullName }}</div> <br>
+    <div id="watch-example">
+      <p>
+        Ask a yes/no question:
+        <input v-model="question" />
+      </p>
+      <p>{{ answer }}</p>
+    </div>
   </div>
   <script src="./app.js"></script>
 </body>

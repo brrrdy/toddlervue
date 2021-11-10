@@ -64,7 +64,17 @@ Vue.createApp({
         ]
       },
       firstName: 'Jane',
-      lastName: 'Doh'
+      lastName: 'Doh',
+      question: '',
+      answer: 'Questions usually contain a question mark. :)'
+    }
+  },
+  watch: {
+    // whenever question changes, t his function will run
+    question(newQuestion, oldQuestion) {
+      if (newQuestion.indexOf('?') > -1) {
+        this.getAnswer()
+      }
     }
   },
   computed: {
@@ -97,6 +107,17 @@ Vue.createApp({
     // this will always update on re-render, because it is a component instance method
     getDateNow() {
       return Date();
+    },
+    getAnswer() {
+      this.answer = 'Thinking...'
+      axios
+        .get('https://yesno.wtf/api')
+        .then(response => {
+          this.answer = response.data.answer
+        })
+        .catch(error => {
+          this.answer = 'Error! Could not reach the API. ' + error;
+        })
     }
   }
 }).mount('#app2');
