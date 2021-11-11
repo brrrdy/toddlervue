@@ -70,8 +70,8 @@ Vue.createApp({
     }
   },
   watch: {
-    // whenever question changes, t his function will run
-    question(newQuestion, oldQuestion) {
+    // whenever question changes, this function will run
+    question(newQuestion) {
       if (newQuestion.indexOf('?') > -1) {
         this.getAnswer()
       }
