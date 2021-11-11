@@ -47,6 +47,7 @@
       </p>
       <p>{{ answer }}</p>
     </div>
+    <div :class="{ active: isActive}">Am I Active? <input type="checkbox" v-model="isActive"></div>
   </div>
   <script src="./app.js"></script>
 </body>

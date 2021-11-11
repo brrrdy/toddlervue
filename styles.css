@@ -4,3 +4,7 @@
   padding: 1em;
   margin: 1em;
 }
+
+div.active {
+  color: red;
+}
