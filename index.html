@@ -11,6 +11,13 @@
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>  
+  <div id="app4" class="app">
+    <button @click="counter += 1">Add 1</button>
+    <p>The button has been clicked {{ counter }} times.</p>
+    <div>
+      <button @click="greet">Greet</button>
+    </div>
+  </div>
   <div id="app3" class="app">
     <h1 v-if="awesome">Vue is awesome!</h1>
     <h1 v-else>Oh no 😢</h1>
@@ -43,7 +50,7 @@
     </ul>
     <ul id="v-for-object">
       <li v-for="(prop, name, index) in listicle">
-        {{index + 1}}. {{ name }}: {{ prop }}
+        {{ index + 1 }}. {{ name }}: {{ prop }}
       </li>
     </ul>
     <ul>

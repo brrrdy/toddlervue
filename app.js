@@ -177,3 +177,20 @@ const vm3 = Vue.createApp({
 }).mount('#app3');
 
 vm3.items.push({ id:4, message: 'baz'})
+
+Vue.createApp({
+  data() {
+    return {
+      counter: 0,
+      name: 'Vue.js'
+    }
+  },
+  methods: {
+    greet(event) {
+      alert('Hello ' + this.name + '!')
+      if (event) {
+        alert(event.target.tagName)
+      }
+    }
+  }
+}).mount('#app4')
