@@ -5,11 +5,11 @@
   margin: 1em;
 }
 
-div.active {
+div.healthy {
   color: green;
 }
 
-div.textDanger::after {
+div.text-danger::after {
   content: "⚠";
   color: red;
   font-weight: bold;

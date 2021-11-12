@@ -50,8 +50,8 @@
     <div 
       class="static" 
       :class="checkersClass">
-      Active? <input type="checkbox" v-model="checkersClass.active"><br>
-      Error? <input type="checkbox" v-model="checkersClass.textDanger">
+      Healthy? <input type="checkbox" v-model="isHealthy"><br>
+      Error? <input type="checkbox" v-model="error.on"> Type: <input type="text" v-model="error.type">
     </div>
   </div>
   <script src="./app.js"></script>

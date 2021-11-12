@@ -67,9 +67,11 @@ Vue.createApp({
       lastName: 'Doh',
       question: '',
       answer: 'Questions usually contain a question mark. :)',
-      checkersClass: {
-        active: true,
-        textDanger: false
+      isHealthy: true,
+      error: {
+        on: false,
+        msg: 'Error!',
+        type: 'benign'
       }
     }
   },
@@ -100,6 +102,12 @@ Vue.createApp({
         const names = newName.split(' ');
         this.firstName = names[0];
         this.lastName = names[names.length - 1];
+      }
+    },
+    checkersClass() {
+      return {
+        healthy: this.isHealthy && !this.error.on,
+        'text-danger': this.error.on && this.error.type === 'fatal'  
       }
     }
   },
