@@ -6,5 +6,10 @@
 }
 
 div.active {
+  color: green;
+}
+
+div.text-danger::after {
+  content: "⚠";
   color: red;
 }

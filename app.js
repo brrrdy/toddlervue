@@ -67,7 +67,8 @@ Vue.createApp({
       lastName: 'Doh',
       question: '',
       answer: 'Questions usually contain a question mark. :)',
-      isActive: true
+      isActive: true,
+      hasError: false
     }
   },
   watch: {

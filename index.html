@@ -47,7 +47,12 @@
       </p>
       <p>{{ answer }}</p>
     </div>
-    <div :class="{ active: isActive}">Am I Active? <input type="checkbox" v-model="isActive"></div>
+    <div 
+      class="static" 
+      :class="{ active: isActive, 'text-danger': hasError }"
+      >Active? <input type="checkbox" v-model="isActive"><br>
+      Error? <input type="checkbox" v-model="hasError">
+    </div>
   </div>
   <script src="./app.js"></script>
 </body>
