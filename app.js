@@ -143,5 +143,12 @@ Vue.createApp({
 }).mount('#app2');
 
 Vue.createApp({
-  // new app who dis
+  data() {
+    return {
+      awesome: true,
+      ok: true,
+      show: true,
+      type: 'C'
+    }
+  }
 }).mount('#app3');

@@ -12,7 +12,25 @@
 </head>
 <body>  
   <div id="app3" class="app">
-    
+    <h1 v-if="awesome">Vue is awesome!</h1>
+    <h1 v-else>Oh no 😢</h1>
+    <template v-if="ok">
+      <h1>Titulo</h1>
+      <p>Paragraph 1</p>
+      <p>Paragraph 2</p>
+    </template>
+    <div v-if="Math.random() > 0.5">
+      Now you see me
+    </div>
+    <div v-else>
+      Now you don't
+    </div><br>
+    Type: 
+    <div v-if="type === 'A'">A</div>
+    <div v-else-if="type === 'B'">B</div>
+    <div v-else-if="type === 'C'">C</div>
+    <div v-else>Not A/B/C</div>
+    <h3 v-show="show">Hiya buddy</h3>
   </div>
   <div id="app2" class="app">
     <p>
