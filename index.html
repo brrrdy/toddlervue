@@ -52,7 +52,8 @@
       :class="checkersClass">
       Healthy? <input type="checkbox" v-model="isHealthy"><br>
       Error? <input type="checkbox" v-model="error.on"> Type: <input type="text" v-model="error.type">
-    </div>
+    </div><br>
+    <div :class="[activeClass, errorClass]">classes du moi</div>
   </div>
   <script src="./app.js"></script>
 </body>

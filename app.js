@@ -72,7 +72,9 @@ Vue.createApp({
         on: false,
         msg: 'Error!',
         type: 'benign'
-      }
+      },
+      activeClass: 'healthy',
+      errorClass: 'text-danger'
     }
   },
   watch: {
