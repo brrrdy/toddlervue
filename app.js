@@ -148,7 +148,14 @@ Vue.createApp({
       awesome: true,
       ok: true,
       show: true,
-      type: 'C'
+      type: 'C',
+      parentMessage: 'Hi there',
+      items: [
+        { message: 'foo' },
+        { message: 'bar' },
+        { message: 'buzz' },
+        { message: 'lightyear' }
+      ]
     }
   }
 }).mount('#app3');

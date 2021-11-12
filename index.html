@@ -31,6 +31,16 @@
     <div v-else-if="type === 'C'">C</div>
     <div v-else>Not A/B/C</div>
     <h3 v-show="show">Hiya buddy</h3>
+    <ul id="array-rendering">
+      <li v-for="item in items">
+        {{ item.message }}
+      </li>
+    </ul>
+    <ul id="array-with-index">
+      <li v-for="(item, index) of items">
+        {{ parentMessage }} - {{ index }} - {{ item.message }}
+      </li>
+    </ul>
   </div>
   <div id="app2" class="app">
     <p>
