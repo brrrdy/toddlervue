@@ -141,3 +141,7 @@ Vue.createApp({
     }
   }
 }).mount('#app2');
+
+Vue.createApp({
+  // new app who dis
+}).mount('#app3');
