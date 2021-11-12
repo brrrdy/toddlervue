@@ -142,7 +142,7 @@ Vue.createApp({
   }
 }).mount('#app2');
 
-Vue.createApp({
+const vm3 = Vue.createApp({
   data() {
     return {
       awesome: true,
@@ -151,11 +151,29 @@ Vue.createApp({
       type: 'C',
       parentMessage: 'Hi there',
       items: [
-        { message: 'foo' },
-        { message: 'bar' },
-        { message: 'buzz' },
-        { message: 'lightyear' }
-      ]
+        { id: 0, message: 'foo' },
+        { id: 1, message: 'bar' },
+        { id: 2, message: 'buzz' },
+        { id: 3, message: 'lightyear' }
+      ],
+      listicle: {
+        title: 'Buzzfeed greatest hits',
+        author: 'Dirk Funk',
+        publishedAt: '2021-11-12'
+      },
+      numbers: [ 1, 2, 3, 4, 5, 6, 7, 8 ]
+    }
+  },
+  computed: {
+    evenNumbers() {
+      return this.numbers.filter(number => number % 2 === 0)
+    }
+  },
+  methods: {
+    odd(numbers) {
+      return numbers.filter(num => num % 2 !== 0)
     }
   }
 }).mount('#app3');
+
+vm3.items.push({ id:4, message: 'baz'})

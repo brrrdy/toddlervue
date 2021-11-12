@@ -37,8 +37,23 @@
       </li>
     </ul>
     <ul id="array-with-index">
-      <li v-for="(item, index) of items">
+      <li v-for="(item, index) of items" :key="item.id">
         {{ parentMessage }} - {{ index }} - {{ item.message }}
+      </li>
+    </ul>
+    <ul id="v-for-object">
+      <li v-for="(prop, name, index) in listicle">
+        {{index + 1}}. {{ name }}: {{ prop }}
+      </li>
+    </ul>
+    <ul>
+      <li v-for="num in evenNumbers" :key="num">
+        {{ num }}
+      </li>
+    </ul>
+    <ul>
+      <li v-for="num in odd(numbers)" :key="num">
+        {{ num }}
       </li>
     </ul>
   </div>
