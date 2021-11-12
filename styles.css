@@ -14,3 +14,7 @@ div.text-danger::after {
   color: red;
   font-weight: bold;
 }
+
+li.divider::marker {
+  color: rgba(0,0,0,0);
+}
