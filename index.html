@@ -49,9 +49,9 @@
     </div>
     <div 
       class="static" 
-      :class="{ active: isActive, 'text-danger': hasError }"
-      >Active? <input type="checkbox" v-model="isActive"><br>
-      Error? <input type="checkbox" v-model="hasError">
+      :class="checkersClass">
+      Active? <input type="checkbox" v-model="checkersClass.active"><br>
+      Error? <input type="checkbox" v-model="checkersClass.textDanger">
     </div>
   </div>
   <script src="./app.js"></script>

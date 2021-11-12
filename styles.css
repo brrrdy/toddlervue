@@ -9,7 +9,8 @@ div.active {
   color: green;
 }
 
-div.text-danger::after {
+div.textDanger::after {
   content: "⚠";
   color: red;
+  font-weight: bold;
 }
