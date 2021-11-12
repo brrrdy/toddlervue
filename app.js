@@ -74,7 +74,13 @@ Vue.createApp({
         type: 'benign'
       },
       activeClass: 'healthy',
-      errorClass: 'text-danger'
+      errorClass: 'text-danger',
+      styledText: {
+        fontFamily: 'sans-serif',
+        color: 'purple',
+        fontSize: '30px',
+        margin: '40px'
+      }
     }
   },
   watch: {
