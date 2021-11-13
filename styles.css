@@ -1,6 +1,6 @@
 .app {
   border: 1px solid lightgray;
-  border-radius: 0.4em;
+  border-radius: 4px;
   padding: 1em;
   margin: 1em;
 }
@@ -17,4 +17,10 @@ div.text-danger::after {
 
 li.divider::marker {
   color: rgba(0,0,0,0);
+}
+
+div.clickable {
+  border: 1px solid red;
+  border-radius: 4px;
+  padding: 2px;
 }

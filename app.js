@@ -201,6 +201,18 @@ Vue.createApp({
         event.preventDefault()
       }
       alert(message)
+    },
+    zero(event) {
+      alert(event.currentTarget.tagName + ' says zero!')
+    },
+    one(event) {
+      alert(event.currentTarget.tagName + ' says one!')
+    },
+    two(event) {
+      alert(event.currentTarget.tagName + ' says two!')
+    },
+    soAlone(event) {
+      alert(event.currentTarget.tagName + ' says what a lonely way to click!')
     }
   }
 }).mount('#app4')
