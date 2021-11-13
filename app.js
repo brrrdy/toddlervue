@@ -191,6 +191,16 @@ Vue.createApp({
       if (event) {
         alert(event.target.tagName)
       }
+    },
+    say(message) {
+      alert(message)
+    },
+    warn(message, event) {
+      if (event) {
+        console.log(event)
+        event.preventDefault()
+      }
+      alert(message)
     }
   }
 }).mount('#app4')

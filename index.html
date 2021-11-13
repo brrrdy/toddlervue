@@ -16,6 +16,13 @@
     <p>The button has been clicked {{ counter }} times.</p>
     <div>
       <button @click="greet">Greet</button>
+    </div><br>
+    <div>
+      <button @click="say('hi')">Say hi</button>
+      <button @click="say('what')">Say what</button>
+    </div><br>
+    <div>
+      <button @click="warn('Form cannot be submitted yet.', $event)">Submit</button>
     </div>
   </div>
   <div id="app3" class="app">
