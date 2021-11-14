@@ -182,7 +182,8 @@ Vue.createApp({
   data() {
     return {
       counter: 0,
-      name: 'Vue.js'
+      name: 'Vue.js',
+      enterCount: 0
     }
   },
   methods: {
@@ -213,6 +214,11 @@ Vue.createApp({
     },
     soAlone(event) {
       alert(event.currentTarget.tagName + ' says what a lonely way to click!')
+    },
+    onEnter(event) {
+      event.preventDefault()
+      console.log(event.currentTarget.tagName + ' just entered.')
+      this.enterCount++
     }
   }
 }).mount('#app4')

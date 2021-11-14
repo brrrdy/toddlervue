@@ -26,6 +26,10 @@
     </div><br>
     <div class="clickable" @click.capture="zero($event)" @click.self="soAlone($event)">
       <button name="multi-event" @click="one($event), two($event)">Submit Multiple Events</button>
+    </div><br>
+    <div>
+      <input type="text" @keyup.enter="onEnter($event)">
+      You have hit enter in this textbox {{ enterCount }} times.
     </div>
   </div>
   <div id="app3" class="app">
