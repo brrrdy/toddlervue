@@ -227,3 +227,23 @@ Vue.createApp({
     }
   }
 }).mount('#app4')
+
+Vue.createApp({
+  data() {
+    return {
+      msg: '',
+      mlMessage: '',
+      isChecked: false,
+      checkedNames: [],
+      picked: '',
+      selected: '',
+      multiSelected: [],
+      dynSelected: 'Apple',
+      dynOptions: [
+        { text: 'One', value: 'Apple' },
+        { text: 'Two', value: 'Banana' },
+        { text: 'Three', value: 'Carrot' }
+      ]
+    }
+  }
+}).mount('#app5')

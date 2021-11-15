@@ -10,7 +10,57 @@
   <script src="https://unpkg.com/lodash@4.17.20/lodash.min.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
-<body>  
+<body>
+  <div id="app5" class="app">
+    <input type="text" v-model="msg" placeholder="edit me">
+    <p>Edit above: {{ msg }}</p> <br>
+    <span>Multiline message:</span>
+    <p style="white-space: pre-line;">{{ mlMessage }}</p><br>
+    <textarea v-model="mlMessage" placeholder="add multiple lines"></textarea><br><br>
+    <input type="checkbox" id="chkbox" v-model="isChecked">
+    <label for="chkbox">Is Checked: {{ isChecked }}</label><br><br>
+    <div>
+      <input type="checkbox" value="Jack" id="jack" v-model="checkedNames">
+      <label for="jack">Jack</label><br>
+      <input type="checkbox" value="John" id="john" v-model="checkedNames">
+      <label for="john">John</label><br>
+      <input type="checkbox" value="Mike" id="mike" v-model="checkedNames">
+      <label for="mike">Mike</label><br><br>
+      <span>Checked names: {{ checkedNames }}</span>
+    </div><br>
+    <div>
+      <input type="radio" id="one" value="One" v-model="picked">
+      <label for="one">One</label> <br>
+      <input type="radio" id="two" value="Two" v-model="picked">
+      <label for="two">Two</label> <br>
+      <span>Picked: {{ picked }}</span>
+    </div><br>
+    <div>
+      <select v-model="selected">
+        <option value="" disabled>Please select one</option>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+      </select><br>
+      <span>Selected: {{ selected }} </span>
+    </div><br>
+    <div>
+      <select v-model="multiSelected" multiple>
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+      </select><br>
+      <span>Selected: {{ multiSelected }} </span>
+    </div><br><br>
+    <div>
+      <select v-model="dynSelected">
+        <option v-for="option in dynOptions" :value="option.value">
+          {{ option.text }}
+        </option>
+      </select><br>
+      <span>Dynamic selection: {{ dynSelected }} </span>
+    </div>
+  </div>  
   <div id="app4" class="app">
     <button @click="counter += 1">Add 1</button>
     <p>The button has been clicked {{ counter }} times.</p>
@@ -100,7 +150,7 @@
     <div id="watch-example">
       <p>
         Ask a yes/no question:
-        <input v-model="question" />
+        <input v-model="question">
       </p>
       <p>{{ answer }}</p>
     </div>
