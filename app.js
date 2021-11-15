@@ -275,7 +275,17 @@ app6.component('button-counter', {
 
 app6.mount('#app6')
 
-const blogApp = Vue.createApp({})
+const blogApp = Vue.createApp({
+  data() {
+    return {
+      posts: [
+        { id: 1, title: "My journey with Vue" },
+        { id: 2, title: "Having fun with Vue" },
+        { id: 3, title: "Vue-tiful web sites" }
+      ]
+    }
+  }
+})
 
 blogApp.component('blog-post', {
   props: ['title'],

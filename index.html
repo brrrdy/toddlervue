@@ -12,9 +12,11 @@
 </head>
 <body>
   <div id="blog-post-demo" class="app">
-    <blog-post title="My journey with Vue"></blog-post>
-    <blog-post title="Having fun with Vue"></blog-post>
-    <blog-post title="Vue-tiful web sites"></blog-post>
+    <blog-post
+    v-for="post in posts"
+    :key="post.id"
+    :title="post.title">
+  </blog-post>
   </div>
   <div id="app6" class="app">
     <button-counter></button-counter>
