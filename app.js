@@ -228,7 +228,7 @@ Vue.createApp({
   }
 }).mount('#app4')
 
-Vue.createApp({
+const vm5 = Vue.createApp({
   data() {
     return {
       msg: '',
@@ -243,7 +243,8 @@ Vue.createApp({
         { text: 'One', value: 'Apple' },
         { text: 'Two', value: 'Banana' },
         { text: 'Three', value: 'Carrot' }
-      ]
+      ],
+      toggle: 'no'
     }
   }
 }).mount('#app5')

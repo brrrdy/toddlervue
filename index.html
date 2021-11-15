@@ -59,7 +59,11 @@
         </option>
       </select><br>
       <span>Dynamic selection: {{ dynSelected }} </span>
-    </div>
+    </div><br>
+    <div>
+      <input type="checkbox" v-model="toggle" true-value="yes" false-value="no"><br>
+      <span>Is above checked: {{ toggle }}</span>
+    </div><br>
   </div>  
   <div id="app4" class="app">
     <button @click="counter += 1">Add 1</button>
