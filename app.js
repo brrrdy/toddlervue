@@ -258,3 +258,28 @@ const vm5 = Vue.createApp({
     }
   }
 }).mount('#app5')
+
+const app6 = Vue.createApp({})
+
+app6.component('button-counter', {
+  data() {
+    return {
+      count: 0
+    }
+  },
+  template: `
+    <button @click="count++">
+      You clicked me {{ count }} times.
+    </button>`
+})
+
+app6.mount('#app6')
+
+const blogApp = Vue.createApp({})
+
+blogApp.component('blog-post', {
+  props: ['title'],
+  template: `<h4>{{ title }}</h4>`
+})
+
+blogApp.mount('#blog-post-demo')
