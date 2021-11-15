@@ -67,8 +67,8 @@
     <input type="text" v-model.lazy="lazyMsg"><br>
     <span>lazy msg: {{ lazyMsg }}</span><br><br>
     <label for="ageBox">Your age: </label>
-    <input type="text" name="ageBox" v-model.number="age"><br>
-    <span>you can date someone in this age range without it being really weird: {{ age >= 16 ? (age/2) + 7 + ' - ' + (age-7) * 2: 'stay home' }}</span>
+    <input type="text" name="ageBox" v-model.number.lazy="age"><br>
+    <span>you can go on a date with someone in this age range without it being really weird: {{ weirdAge }}</span>
   </div>  
   <div id="app4" class="app">
     <button @click="counter += 1">Add 1</button>

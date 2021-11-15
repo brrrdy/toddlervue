@@ -248,5 +248,13 @@ const vm5 = Vue.createApp({
       lazyMsg: '',
       age: 18
     }
+  },
+  computed: {
+    weirdAge() {
+      const age = this.age
+      const lowAge = Math.max(Math.ceil((age/2) + 7),16)
+      const highAge = Math.floor((age-7) * 2)
+      return (age >= 16 ? lowAge + ' - ' + highAge : 'stay home')
+    }
   }
 }).mount('#app5')
