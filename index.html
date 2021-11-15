@@ -64,6 +64,11 @@
       <input type="checkbox" v-model="toggle" true-value="yes" false-value="no"><br>
       <span>Is above checked: {{ toggle }}</span>
     </div><br>
+    <input type="text" v-model.lazy="lazyMsg"><br>
+    <span>lazy msg: {{ lazyMsg }}</span><br><br>
+    <label for="ageBox">Your age: </label>
+    <input type="text" name="ageBox" v-model.number="age"><br>
+    <span>you can date someone in this age range without it being really weird: {{ age >= 16 ? (age/2) + 7 + ' - ' + (age-7) * 2: 'stay home' }}</span>
   </div>  
   <div id="app4" class="app">
     <button @click="counter += 1">Add 1</button>

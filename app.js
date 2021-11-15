@@ -244,7 +244,9 @@ const vm5 = Vue.createApp({
         { text: 'Two', value: 'Banana' },
         { text: 'Three', value: 'Carrot' }
       ],
-      toggle: 'no'
+      toggle: 'no',
+      lazyMsg: '',
+      age: 18
     }
   }
 }).mount('#app5')
