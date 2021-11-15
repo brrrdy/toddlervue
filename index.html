@@ -28,8 +28,8 @@
       <button name="multi-event" @click="one($event), two($event)">Submit Multiple Events</button>
     </div><br>
     <div>
-      <input type="text" @keyup.enter="onEnter($event)">
-      You have hit enter in this textbox {{ enterCount }} times.
+      <input type="text" @keydown.enter.exact="onEnter($event)" @keydown.shift.enter.exact="onShiftEnter($event)">
+      You have hit enter in this textbox {{ enterCount }} times. Hit shift + enter to decrement.
     </div>
   </div>
   <div id="app3" class="app">

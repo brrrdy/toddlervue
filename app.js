@@ -217,8 +217,13 @@ Vue.createApp({
     },
     onEnter(event) {
       event.preventDefault()
-      console.log(event.currentTarget.tagName + ' just entered.')
       this.enterCount++
+    },
+    onShiftEnter(event) {
+      event.preventDefault()
+      if (this.enterCount > 0) {
+        this.enterCount--
+      }
     }
   }
 }).mount('#app4')
